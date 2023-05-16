@@ -1,19 +1,25 @@
 # vue-http
 
+This is a vue project to assist in understanding:
+
+- [x] HTTP requests in vue
+- [x] Lifecycle hooks
+- [x] Template Refs
+
 ## Project setup
+
 ```
 npm install
 ```
 
 ### Compiles and hot-reloads for development
+
 ```
 npm run serve
 ```
 
 ### Compiles and minifies for production
+
 ```
 npm run build
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
