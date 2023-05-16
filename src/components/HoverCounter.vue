@@ -4,13 +4,15 @@
   </div>
 </template>
 
-<script>
-  import CounterMixin from '../mixins/counter'
+<script setup>
+  import { ref } from 'vue';
 
-  export default {
-    name: "HoverCounter",
-    mixins: [CounterMixin]
+  const count = ref(0)
+
+  const incrementCount = () => {
+    count.value++
   }
+
 </script>
 
 <style lang="scss" scoped>
