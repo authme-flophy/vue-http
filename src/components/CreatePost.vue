@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form>
+    <form @submit.prevent="createPost">
       <div>
         <label for="userId">Post User Id</label>
         <input type="text" name="userId" id="userId" v-model="formData.userId">
@@ -19,6 +19,8 @@
 </template>
 
 <script>
+  import axios from "axios"
+
   export default {
     name: "CreatePost",
     data() {
@@ -28,6 +30,17 @@
           title: "",
           body: ""
         }
+      }
+    },
+    methods: {
+      createPost() {
+        axios
+          .post('https://jsonplaceholder.typicode.com/posts', this.formData)
+          .then(response => {
+            console.log(response.data)
+            console.log(response.status)
+          })
+          .catch(err => console.error(err))
       }
     }
   }
