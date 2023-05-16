@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="getPosts">Load Posts</button>
+    <!-- <button @click="getPosts">Load Posts</button> -->
     <h3 v-if="errMsg">{{ errMsg }}</h3>
     <div v-for="post in posts" :key="post.id">
       <h1>{{ post.title }}</h1>
@@ -14,6 +14,9 @@
 
   export default {
     name: "PostList",
+    created() {
+      this.getPosts()
+    },
     data() {
       return {
         posts: [],
