@@ -1,12 +1,15 @@
 <template>
-  <PostList/>
-  <CreatePost/>
+  <TemplateRef/>
+
+  <!-- <PostList/>
+  <CreatePost/> -->
 </template>
 
 <script>
 import CreatePost from './components/CreatePost.vue';
 import HelloWorld from './components/HelloWorld.vue'
 import PostList from './components/PostList.vue';
+import TemplateRef from './components/TemplateRef.vue';
 
 export default {
   name: 'App',
@@ -14,6 +17,7 @@ export default {
     HelloWorld,
     PostList,
     CreatePost,
+    TemplateRef,
   }
 }
 </script>
