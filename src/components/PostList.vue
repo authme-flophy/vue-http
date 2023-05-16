@@ -1,6 +1,7 @@
 <template>
   <div>
     <button @click="getPosts">Load Posts</button>
+    <h3 v-if="errMsg">{{ errMsg }}</h3>
     <div v-for="post in posts" :key="post.id">
       <h1>{{ post.title }}</h1>
       <p>{{ post.body }}</p>
@@ -16,6 +17,7 @@
     data() {
       return {
         posts: [],
+        errMsg: ""
       }
     },
     methods: {
@@ -26,7 +28,10 @@
             console.log(response.data)
             this.posts = response.data
           })
-          .catch(err => console.log(err))
+          .catch(err => {
+            console.log(err)
+            this.errMsg = "Error retrieving data"
+          })
       }
     }
   }
