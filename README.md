@@ -5,6 +5,7 @@ This is a vue project to assist in understanding:
 - [x] HTTP requests in vue
 - [x] Lifecycle hooks
 - [x] Template Refs
+- [x] Reusability with mixins
 
 ## Project setup
 
