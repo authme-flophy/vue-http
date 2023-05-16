@@ -1,6 +1,10 @@
 <template>
   <div>
     <button @click="getPosts">Load Posts</button>
+    <div v-for="post in posts" :key="post.id">
+      <h1>{{ post.title }}</h1>
+      <p>{{ post.body }}</p>
+    </div>
   </div>
 </template>
 
@@ -16,7 +20,13 @@
     },
     methods: {
       getPosts() {
-        axios.get('https://jsonplaceholder.typicode.com/posts')
+        axios
+          .get('https://jsonplaceholder.typicode.com/posts')
+          .then((response) => {
+            console.log(response.data)
+            this.posts = response.data
+          })
+          .catch(err => console.log(err))
       }
     }
   }
